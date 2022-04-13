@@ -390,11 +390,17 @@ class selectors {
         }
       } );
 
+      if ( reserved.has( selector.value ) ) {
+        selector.className = 'alert';
+      } else {
+        selector.className = '';
+      }
+
       for ( var option of selector.children ) {
         if ( reserved.has( option.value ) ) {
           option.className = 'reserved';
         } else {
-          option.className = '';
+          option.className = 'selectable';
         }
 
       }
