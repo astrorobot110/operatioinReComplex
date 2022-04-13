@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Operation: re/Complex information generator</title>
+    <style type="text/css">
+
+      @import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap');
+
+      * {
+        margin: 0, 0
+          padding: 0, 0
+      }
+
+      body {
+        font-family: 'BIZ UDPGothic', sans-serif;
+        color: #ffffff;
+        background: #000000;
+        padding-top: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 1em;
+      }
+
+      div {
+        margin-bottom: 1em
+      }
+
+      select.formation {
+        width: 16em;
+      }
+
+      option.reserved {
+        background: #ffbdb0;
+      }
+
+      .play {
+        line-height: 1.8;
+      }
+
+      .stage {
+        line-height: 1.5;
+      }
+
+      .alert {
+        color: #dd2222;
+      }
+
+      .left {
+        text-align: left;
+      }
+      .right {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Operation: re/Complex information generator</h1>
+    <form id="report">
+      <div>
+        <label for="reporter">レポート提出者:</label>
+        <input type="text" id="reporter">
+      </div>
+      <div>
+        <label for="difficulty">難易度:</label>
+        <select id="difficulty">
+          <option value="PRACTICE">PRACTICE</option>
+          <option value="KIDS">KIDS</option>
+          <option value="NORMAL" selected>NORMAL</option>
+          <option value="BYDO">BYDO</option>
+          <option value="TYPER1">R-TYPER</option>
+          <option value="TYPER2">R-TYPER 2</option>
+          <option value="TYPER3">R-TYPER 3</option>
+        </select>
+      </div>
+      <div>
+        <label for="route">選択ルート:</label>
+        <select id="route">
+          <option value="n.0 route" selected>n.0 route</option>
+          <option value="n.1 route">n.1 route</option>
+          <option value="n.2 route">n.2 route</option>
+          <option value="DLC X route">DLC X route</option>
+          <option value="DLC Y route">DLC Y route</option>
+        </select>
+      </div>
+      <div>
+        <label for="rSet">set:</label>
+        <select id="rSetName">
+          <option value="Pure set" selected>Pure set</option>
+          <option value="Xtend set">Xtend set</option>
+          <option value="Bydo set">Bydo set</option>
+          <option value="Elementary set">Elementary set</option>
+          <option value="re/Corps set">re/Corps set</option>
+          <option value="re/Ace set">re/Ace set</option>
+          <option value="Nightmare set">Nightmare set</option>
+        </select>
+        <span style="display: none">
+          <label for="wildcard">wildcard:</label>
+          <select id="wildcard">
+            <option value="R-9A2 / Delta">R-9A2 / Delta</option>
+            <option value="R-9A3 / Ladylove">R-9A3 / Ladylove</option>
+            <option value="R-9A4 / Wave Master">R-9A4 / Wave Master</option>
+            <option value="R-9AF / Morning Glory">R-9AF / Morning Glory</option>
+            <option value="R-9AD / Escort Time">R-9AD / Escort Time</option>
+            <option value="R-9AD2 / Princedom">R-9AD2 / Princedom</option>
+            <option value="R-9AD3 / King's Mind">R-9AD3 / King's Mind</option>
+            <option value="R-9K / Sunday Strike">R-9K / Sunday Strike</option>
+            <option value="R-9S / Strike Bomer">R-9S / Strike Bomer</option>
+            <option value="R-9/0 / Ragnarok">R-9/0 / Ragnarok</option>
+            <option value="R-9/02 / Ragnarok II">R-9/02 / Ragnarok II</option>
+            <option value="R-9AX / Delicatessen">R-9AX / Delicatessen</option>
+            <option value="R-9AX2 / Dinner Bell">R-9AX2 / Dinner Bell</option>
+            <option value="R-9Leo / Leo">R-9Leo / Leo</option>
+            <option value="R-9Leo2 / Leo II">R-9Leo2 / Leo II</option>
+            <option value="R-9Sk / Principalities">R-9Sk / Principalities</option>
+            <option value="R-9Sk2 / Dominions">R-9Sk2 / Dominions</option>
+            <option value="R-9W / Wise Man">R-9W / Wise Man</option>
+            <option value="R-9WB / Happy Days">R-9WB / Happy Days</option>
+            <option value="R-9WF / Sweet Memories">R-9WF / Sweet Memories</option>
+            <option value="R-9WZ / Disaster Report">R-9WZ / Disaster Report</option>
+            <option value="R-9B2 / Stayer">R-9B2 / Stayer</option>
+            <option value="R-9B3 / Sleipnir">R-9B3 / Sleipnir</option>
+            <option value="R-9D2 / Morning Star">R-9D2 / Morning Star</option>
+            <option value="R-9DH / Grace Note">R-9DH / Grace Note</option>
+            <option value="R-9DH2 / Hot Conductor">R-9DH2 / Hot Conductor</option>
+            <option value="R-9DH3 / Concertmaster">R-9DH3 / Concertmaster</option>
+            <option value="R-9DV / Tears Shower">R-9DV / Tears Shower</option>
+            <option value="R-9DV2 / Northern Lights">R-9DV2 / Northern Lights</option>
+            <option value="R-9DP / Hakusan">R-9DP / Hakusan</option>
+            <option value="R-9DP2 / Asanogawa">R-9DP2 / Asanogawa</option>
+            <option value="R-9DP3 / Kenrokuen">R-9DP3 / Kenrokuen</option>
+            <option value="R-9E2 / Owl Light">R-9E2 / Owl Light</option>
+            <option value="R-9E3 / Sweet Luna">R-9E3 / Sweet Luna</option>
+            <option value="R-9ER / Powered Silence">R-9ER / Powered Silence</option>
+            <option value="R-9ER2 / Unchained Silence">R-9ER2 / Unchained Silence</option>
+            <option value="RX-10 / Albatross">RX-10 / Albatross</option>
+            <option value="R-11A / Future World">R-11A / Future World</option>
+            <option value="R-11B / Peace Maker">R-11B / Peace Maker</option>
+            <option value="R-11S / Tropical Angel">R-11S / Tropical Angel</option>
+            <option value="R-11S2 / No Chaser">R-11S2 / No Chaser</option>
+            <option value="TX-T / Eclipse">TX-T / Eclipse</option>
+            <option value="OF-1 / Daedalus">OF-1 / Daedalus</option>
+            <option value="OFX-2 / Valkyrie">OFX-2 / Valkyrie</option>
+            <option value="OF-3 / Garuda">OF-3 / Garuda</option>
+            <option value="OFX-4 / Songokuu">OFX-4 / Songokuu</option>
+            <option value="OF-5 / Kaguya">OF-5 / Kaguya</option>
+            <option value="OFX-X / Mariko">OFX-X / Mariko</option>
+            <option value="TW-1 / Duckbill">TW-1 / Duckbill</option>
+            <option value="TW-2 / Kiwi Berry">TW-2 / Kiwi Berry</option>
+            <option value="TW-3B / Long Symphony">TW-3B / Long Symphony</option>
+            <option value="TP-1 / Scope Duck">TP-1 / Scope Duck</option>
+            <option value="TP-2 / Pow Armor">TP-2 / Pow Armor</option>
+            <option value="TP-2H / Pow Armor II">TP-2H / Pow Armor II</option>
+            <option value="TP-3 / Mr. Heli">TP-3 / Mr. Heli</option>
+            <option value="TP-2S / Cyber Nova">TP-2S / Cyber Nova</option>
+            <option value="TP-2M / Frogman">TP-2M / Frogman</option>
+            <option value="TL-T / Chiron">TL-T / Chiron</option>
+            <option value="TL-1A / Iason">TL-1A / Iason</option>
+            <option value="TL-1B / Asklepios">TL-1B / Asklepios</option>
+            <option value="TL-2A / Achilleus">TL-2A / Achilleus</option>
+            <option value="TL-2A2 / Neoptolemos">TL-2A2 / Neoptolemos</option>
+            <option value="TL-2B / Herakles">TL-2B / Herakles</option>
+            <option value="TL-2B2 / Hyllos">TL-2B2 / Hyllos</option>
+            <option value="RX-12 / Cross the Rubicon">RX-12 / Cross the Rubicon</option>
+            <option value="R-13T / Echidna">R-13T / Echidna</option>
+            <option value="R-13A / Cerberos">R-13A / Cerberos</option>
+            <option value="R-13A2 / Hades">R-13A2 / Hades</option>
+            <option value="R-13B / Charon">R-13B / Charon</option>
+            <option value="BX-T / Dantalion">BX-T / Dantalion</option>
+            <option value="B-1A / Digitalius">B-1A / Digitalius</option>
+            <option value="B-1A2 / Digitalius II">B-1A2 / Digitalius II</option>
+            <option value="B-1A3 / Digitalius III">B-1A3 / Digitalius III</option>
+            <option value="B-1B / Mad Forest">B-1B / Mad Forest</option>
+            <option value="B-1B2 / Mad Forest II">B-1B2 / Mad Forest II</option>
+            <option value="B-1B3 / Mad Forest III">B-1B3 / Mad Forest III</option>
+            <option value="B-1C / Amphibian">B-1C / Amphibian</option>
+            <option value="B-1C2 / Amphibian II">B-1C2 / Amphibian II</option>
+            <option value="B-1C3 / Amphibian III">B-1C3 / Amphibian III</option>
+            <option value="B-1D / Bydo System α">B-1D / Bydo System α</option>
+            <option value="B-1D2 / Bydo System β">B-1D2 / Bydo System β</option>
+            <option value="B-1D3 / Bydo System γ">B-1D3 / Bydo System γ</option>
+            <option value="BX-2 / Platonic Love">BX-2 / Platonic Love</option>
+            <option value="B-3A / Misty Lady">B-3A / Misty Lady</option>
+            <option value="B-3A2 / Misty Lady II">B-3A2 / Misty Lady II</option>
+            <option value="B-3B / Metallic Dawn">B-3B / Metallic Dawn</option>
+            <option value="B-3B2 / Metallic Dawn II">B-3B2 / Metallic Dawn II</option>
+            <option value="B-3C / Sexy Dynamite">B-3C / Sexy Dynamite</option>
+            <option value="B-3C2 / Sexy Dynamite II">B-3C2 / Sexy Dynamite II</option>
+            <option value="BX-4 / Arvanche">BX-4 / Arvanche</option>
+            <option value="B-5A / Claw Claw">B-5A / Claw Claw</option>
+            <option value="B-5B / Golden Selection">B-5B / Golden Selection</option>
+            <option value="B-5C / Platinum Heart">B-5C / Platinum Heart</option>
+            <option value="B-5D / Diamond Wedding">B-5D / Diamond Wedding</option>
+            <option value="R-99 / Last Dancer">R-99 / Last Dancer</option>
+            <option value="R-100 / Curtain Call">R-100 / Curtain Call</option>
+            <option value="R-101 / Grand Finale">R-101 / Grand Finale</option>
+            <option value="R-9uso799 / April Fools Prototype">R-9uso799 / April Fools Prototype</option>
+            <option value="R-9uso800 / April Fools">R-9uso800 / April Fools</option>
+            <option value="R-9uso801 / April Fools II">R-9uso801 / April Fools II</option>
+          </select>
+        </span>
+      </div>
+      <p>Limiter: <span id="limiter"></span></p>
+      <h2>Formation:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="right">Stage:</th>
+            <th class="left">R-Craft</th>
+          </tr>
+        </thead>
+        <tbody id="formation">
+          <tr>
+            <td id="stage1" class="right"></td>
+            <td><select id="rCraft1" class="formation"></select></td>
+          </tr>
+          <tr>
+            <td id="stage2" class="right"></td>
+            <td><select id="rCraft2" class="formation"></select></td>
+          </tr>
+          <tr>
+            <td id="stage3" class="right"></td>
+            <td><select id="rCraft3" class="formation"></select></td>
+          </tr>
+          <tr>
+            <td id="stage4" class="right"></td>
+            <td><select id="rCraft4" class="formation"></select></td>
+          </tr>
+          <tr>
+            <td id="stage5" class="right"></td>
+            <td><select id="rCraft5" class="formation"></select></td>
+          </tr>
+          <tr>
+            <td id="stage6" class="right"></td>
+            <td><select id="rCraft6" class="formation"></select></td>
+          </tr>
+          <tr>
+            <td id="stage7" class="right"></td>
+            <td><select id="rCraft7" class="formation"></select></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Summary:</h2>
+      <div id="summary"><div>
+    </form>
+    <script src="./control.js"></script>
+  </body>
+</html>
+
+<!-- vim: set expandtab tabstop=2 foldmethod=marker: -->
