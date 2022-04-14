@@ -281,10 +281,10 @@ class selectors {
 
     if ( this.difficulty.value == 'NORMAL' && this.route.value.slice(0, 1) == 'n' && this.rSetName.value != 'Nightmare set' ) {
       this.limiter.innerHTML = 'On.';
-      this.limiter.style.color = 'revert';
+      this.limiter.className = '';
     } else {
       this.limiter.innerHTML = 'Check your limiter state.';
-      this.limiter.style.color = '#dd2222';
+      this.limiter.className = 'alert';
       flag = true;
     }
 
@@ -397,9 +397,9 @@ class selectors {
       } );
 
       if ( reserved.has( selector.value ) ) {
-        selector.className = 'alert';
+        selector.className = 'formation alert';
       } else {
-        selector.className = '';
+        selector.className = 'formation';
       }
 
       for ( var option of selector.children ) {
