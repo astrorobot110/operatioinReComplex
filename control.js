@@ -128,7 +128,7 @@ class rSet {
 
 class formation {
   constructor( rSetName, wild = '' ) {
-    this.rSet = new rSet( rSetName, wild = '');
+    this.rSet = new rSet( rSetName, wild = '' );
     this.formation = new Array(7);
 
     var groupDict = this.rSet.getGroupDict();
@@ -167,7 +167,13 @@ class formation {
 
   setWild( wild ) {
     if ( this.rSet.name == 'Elementary set' ) {
-      this.formation[this.formation.length - 1].rCraft = wild;
+      for ( var formation of this.formation ) {
+        if ( formation.group == 6 ) {
+          formation.rCraft = wild;
+        }
+      }
+
+      this.rSet.table[6][0] = wild;
     }
 
     return this.formation;
@@ -265,7 +271,7 @@ class selectors {
   init() {
     this.setRoute();
     this.setFormation();
-    this.getWild(this.wildcard.value);
+    this.getWild();
     this.checkLimiter();
     this.showSummary();
   }
